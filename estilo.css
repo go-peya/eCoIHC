@@ -191,7 +191,7 @@ header h1{
     display: block;
     width: 100%;
     border: none;
-    background: #000;
+    background: #f4952c;
     color: #fff;
     border-radius: 5px;
     font-size: 18px;
@@ -217,7 +217,7 @@ header h1{
 
 /* Botón del carrito */
 .cart-btn {
-  background-color: #28a745; /* Color verde del botón */
+  background-color: #f4952c; /* Color verde del botón */
   color: white; /* Color del texto */
   padding: 12px 20px; /* Espaciado interno */
   border-radius: 8px; /* Bordes redondeados */
