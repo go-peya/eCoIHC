@@ -191,7 +191,7 @@ header h1{
     display: block;
     width: 100%;
     border: none;
-    background: #f4952c;
+    background: #F4952C;
     color: #fff;
     border-radius: 5px;
     font-size: 18px;
@@ -217,7 +217,7 @@ header h1{
 
 /* Botón del carrito */
 .cart-btn {
-  background-color: #f4952c; /* Color verde del botón */
+  background-color: #F4952C; /* Color verde del botón */
   color: white; /* Color del texto */
   padding: 12px 20px; /* Espaciado interno */
   border-radius: 8px; /* Bordes redondeados */
@@ -232,7 +232,7 @@ header h1{
 
 /* Efecto hover para el botón */
 .cart-btn:hover {
-  background-color: #218838; /* Color más oscuro al pasar el mouse */
+  background-color: #292929; /* Color más oscuro al pasar el mouse */
 }
 
 /* Estilo del ícono del carrito */
@@ -267,7 +267,7 @@ header h1{
   font-weight: bold; /* Peso de fuente en negrita */
   font-size: 16px; /* Tamaño del texto */
   background-color: white; /* Fondo blanco para contraste */
-  color: #28a745; /* Color verde para armonía */
+  color: #000; /* Color verde para armonía */
   padding: 4px 8px; /* Espaciado interno */
   border-radius: 4px; /* Bordes redondeados */
   margin-top: 4px; /* Espacio superior */
