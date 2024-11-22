@@ -3,15 +3,15 @@ var carritoVisible = false;
 
 // Lista de productos
 var productos = [
-    { titulo: "Pan", img: "../img/pan1.svg", precio: "S/ 15.000" },
-    { titulo: "Milhojas 1", img: "../img/pan2.svg", precio: "S/ 25.000" },
-    { titulo: "Croissant", img: "../img/pan3.svg", precio: "S/ 35.000" },
-    { titulo: "Milhojas 2", img: "../img/pan4.svg", precio: "S/ 18.000" },
-    { titulo: "Alfajor", img: "../img/pan5.svg", precio: "S/ 32.000" },
-    { titulo: "Pie 1", img: "../img/pan6.svg", precio: "S/ 18.000" },
-    { titulo: "Pie 2", img: "../img/pan7.svg", precio: "S/ 54.000" },
-    { titulo: "Pie 3", img: "../img/pan8.svg", precio: "S/ 32.000" },
-    { titulo: "Empanada", img: "../img/pan9.svg", precio: "S/ 42.800" }
+    { titulo: "Milhojas 1", img: "../img/pan1.webp", precio: "S/ 15.00" },
+    { titulo: "Croissant", img: "../img/pan2.webp", precio: "S/ 25.00" },
+    { titulo: "Milhojas 2", img: "../img/pan3.webp", precio: "S/ 35.00" },
+    { titulo: "Alfajor", img: "../img/pan4.webp", precio: "S/ 18.00" },
+    { titulo: "Carrot Cake", img: "../img/pan5.webp", precio: "S/ 32.00" },
+    { titulo: "Pie 1", img: "../img/pan6.webp", precio: "S/ 18.00" },
+    { titulo: "Pie 2", img: "../img/pan7.webp", precio: "S/ 54.00" },
+    { titulo: "Pie 3", img: "../img/pan8.webp", precio: "S/ 32.00" },
+    { titulo: "Empanada", img: "../img/pan9.webp", precio: "S/ 42.80" }
 ];
 
 //Espermos que todos los elementos de la pàgina cargen para ejecutar el script
@@ -215,7 +215,7 @@ function actualizarTotalCarrito(){
     //seleccionamos el contenedor carrito
     var carritoContenedor = document.getElementsByClassName('carrito')[0];
     var carritoItems = carritoContenedor.getElementsByClassName('carrito-item');
-    var total = 0;
+    var total = 0.00;
     //recorremos cada elemento del carrito para actualizar el total
     for(var i=0; i< carritoItems.length;i++){
         var item = carritoItems[i];
@@ -227,10 +227,10 @@ function actualizarTotalCarrito(){
         var cantidad = cantidadItem.value;
         total = total + (precio * cantidad);
     }
-    total = Math.round(total * 100)/100;
+    total = Math.round(total * 1)/100;
 
-    document.getElementsByClassName('carrito-precio-total')[0].innerText = 'S/ '+total.toLocaleString("es") + ",00";
-
+    document.getElementsByClassName('carrito-precio-total')[0].innerText = 'S/ ' + total.toFixed(2);
+    document.getElementsByClassName('total-price')[0].innerText = 'S/ ' + total.toFixed(2);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -241,11 +241,3 @@ document.addEventListener('DOMContentLoaded', () => {
         carrito.classList.toggle('visible');
     });
 });
-
-
-
-
-
-
-
-
