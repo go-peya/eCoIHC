@@ -3,15 +3,15 @@ var carritoVisible = false;
 
 // Lista de productos
 var productos = [
-    { titulo: "Milhojas 1", img: "img/pan1.webp", precio: "S/ 15.00" },
-    { titulo: "Croissant", img: "/img/pan2.webp", precio: "S/ 25.00" },
-    { titulo: "Milhojas 2", img: "../img/pan3.webp", precio: "S/ 35.00" },
-    { titulo: "Alfajor", img: "../img/pan4.webp", precio: "S/ 18.00" },
-    { titulo: "Carrot Cake", img: "../img/pan5.webp", precio: "S/ 32.00" },
-    { titulo: "Pie 1", img: "../img/pan6.webp", precio: "S/ 18.00" },
-    { titulo: "Pie 2", img: "../img/pan7.webp", precio: "S/ 54.00" },
-    { titulo: "Pie 3", img: "../img/pan8.webp", precio: "S/ 32.00" },
-    { titulo: "Empanada", img: "../img/pan9.webp", precio: "S/ 42.80" }
+    { titulo: "Milhojas 1", img: "img/pan1.png", precio: "S/ 15.00" },
+    { titulo: "Croissant", img: "/img/pan2.png", precio: "S/ 25.00" },
+    { titulo: "Milhojas 2", img: "../img/pan3.png", precio: "S/ 35.00" },
+    { titulo: "Alfajor", img: "../img/pan4.png", precio: "S/ 18.00" },
+    { titulo: "Carrot Cake", img: "../img/pan5.png", precio: "S/ 32.00" },
+    { titulo: "Pie 1", img: "../img/pan6.png", precio: "S/ 18.00" },
+    { titulo: "Pie 2", img: "../img/pan7.png", precio: "S/ 54.00" },
+    { titulo: "Pie 3", img: "../img/pan8.png", precio: "S/ 32.00" },
+    { titulo: "Empanada", img: "../img/pan9.png", precio: "S/ 42.80" }
 ];
 
 //Espermos que todos los elementos de la pàgina cargen para ejecutar el script
