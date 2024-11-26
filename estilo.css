@@ -93,7 +93,8 @@ header h1{
     transition: right 0.3s ease, opacity 0.3s ease;
     opacity: 0;
     z-index: 1000;
-    display: none;
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido esté en columna */
 }
 
 .carrito.visible {
@@ -107,6 +108,12 @@ header h1{
     color: #fff;
     text-align: center;
     padding: 30px 0;
+}
+.carrito-items {
+    flex: 1; /* Toma el espacio disponible */
+    max-height: calc(100vh - 250px); /* Ajusta la altura máxima según el espacio disponible */
+    overflow-y: auto; /* Agrega la barra de desplazamiento vertical */
+    padding: 10px; /* Agrega algo de espacio interno */
 }
 .carrito .carrito-item{
     display: flex;
@@ -176,8 +183,11 @@ header h1{
 }
 
 .carrito-total{
+   
     background-color: #f3f3f3;
-    padding: 30px;
+    padding: 20px;
+    /*border-top: 1px solid #666;  Separador del total */
+
 }
 .carrito-total .fila{
     display: flex;
