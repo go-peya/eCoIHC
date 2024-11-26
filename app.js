@@ -3,7 +3,7 @@ var carritoVisible = false;
 
 // Lista de productos
 var productos = [
-    { titulo: "Milhojas 1", img: "img/pan1.png", precio: "S/ 15.00" },
+    { titulo: "Milhojas 1", img: "../img/pan1.png", precio: "S/ 15.00" },
     { titulo: "Croissant", img: "img/pan2.png", precio: "S/ 25.00" },
     { titulo: "Milhojas 2", img: "img/pan3.png", precio: "S/ 35.00" },
     { titulo: "Alfajor", img: "img/pan4.png", precio: "S/ 18.00" },
