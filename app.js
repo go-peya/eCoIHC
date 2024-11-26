@@ -3,15 +3,15 @@ var carritoVisible = false;
 
 // Lista de productos
 var productos = [
-    { titulo: "Milhojas 1", img: "img/pan1.png", precio: "S/ 15.00" },
-    { titulo: "Croissant", img: "img/pan2.png", precio: "S/ 25.00" },
-    { titulo: "Milhojas 2", img: "img/pan3.png", precio: "S/ 35.00" },
-    { titulo: "Alfajor", img: "img/pan4.png", precio: "S/ 18.00" },
-    { titulo: "Carrot Cake", img: "img/pan5.png", precio: "S/ 32.00" },
-    { titulo: "Pie 1", img: "img/pan6.png", precio: "S/ 18.00" },
-    { titulo: "Pie 2", img: "img/pan7.png", precio: "S/ 54.00" },
-    { titulo: "Pie 3", img: "img/pan8.png", precio: "S/ 32.00" },
-    { titulo: "Empanada", img: "img/pan9.png", precio: "S/ 42.80" }
+    { titulo: "Milhojas 1", img: "../img/pan1.webp", precio: "S/ 15.00" },
+    { titulo: "Croissant", img: "../img/pan2.webp", precio: "S/ 25.00" },
+    { titulo: "Milhojas 2", img: "../img/pan3.webp", precio: "S/ 35.00" },
+    { titulo: "Alfajor", img: "../img/pan4.webp", precio: "S/ 18.00" },
+    { titulo: "Carrot Cake", img: "../img/pan5.webp", precio: "S/ 32.00" },
+    { titulo: "Pie 1", img: "../img/pan6.webp", precio: "S/ 18.00" },
+    { titulo: "Pie 2", img: "../img/pan7.webp", precio: "S/ 54.00" },
+    { titulo: "Pie 3", img: "../img/pan8.webp", precio: "S/ 32.00" },
+    { titulo: "Empanada", img: "../img/pan9.webp", precio: "S/ 42.80" }
 ];
 
 //Espermos que todos los elementos de la pàgina cargen para ejecutar el script
@@ -61,10 +61,13 @@ function ready(){
 }
 
 function cerrarCarrito() {
-    var carrito = document.getElementById('carrito');
-    carrito.style.display = 'none';
-    carritoVisible = false;
+    if (carritoVisible) {
+        var carrito = document.getElementById('carrito');
+        carrito.classList.remove('visible');
+        carritoVisible = false;
+    }
 }
+
 
 function renderProductos() {
     var contenedorItems = document.getElementsByClassName('contenedor-items')[0];
@@ -104,15 +107,18 @@ function agregarAlCarritoClicked(event){
 
     agregarItemAlCarrito(titulo, precio, imagenSrc);
 
-    hacerVisibleCarrito();
+    //hacerVisibleCarrito();
 }
 
 //Funcion que hace visible el carrito
-function hacerVisibleCarrito(){
-    carritoVisible = true;
-    var carrito = document.getElementsByClassName('carrito')[0];
-    carrito.classList.add('visible');
+function hacerVisibleCarrito() {
+    if (!carritoVisible) {
+        var carrito = document.getElementById('carrito');
+        carrito.classList.add('visible');
+        carritoVisible = true;
+    }
 }
+
 
 //Funciòn que agrega un item al carrito
 function agregarItemAlCarrito(titulo, precio, imagenSrc){
@@ -162,6 +168,7 @@ function agregarItemAlCarrito(titulo, precio, imagenSrc){
 
     //Actualizamos total
     actualizarTotalCarrito();
+    actualizarContadorCarrito();
 }
 
 //Aumento en uno la cantidad del elemento seleccionado
@@ -173,6 +180,7 @@ function sumarCantidad(event){
     cantidadActual++;
     selector.getElementsByClassName('carrito-item-cantidad')[0].value = cantidadActual;
     actualizarTotalCarrito();
+    actualizarContadorCarrito();
 }
 
 //Resto en uno la cantidad del elemento seleccionado
@@ -194,6 +202,7 @@ function eliminarItemCarrito(event){
     buttonClicked.parentElement.parentElement.remove();
     //Actualizamos el total del carrito
     actualizarTotalCarrito();
+    actualizarContadorCarrito();
 
     //la siguiente funciòn controla si hay elementos en el carrito
     //Si no hay elimino el carrito
@@ -238,6 +247,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const carrito = document.getElementById('carrito');
 
     cartBtn.addEventListener('click', () => {
-        carrito.classList.toggle('visible');
+        if (carritoVisible) {
+            cerrarCarrito();
+        } else {
+            hacerVisibleCarrito();
+        }
     });
+    
 });
+
+document.getElementById('cart-btn').addEventListener('click', function() {
+    hacerVisibleCarrito();
+});
+
+function actualizarContadorCarrito() {
+    var itemsCarrito = document.getElementsByClassName('carrito-items')[0];
+    var cantidadTotal = 0;
+
+    // Sumar las cantidades de cada producto en el carrito
+    var inputsCantidad = itemsCarrito.getElementsByClassName('carrito-item-cantidad');
+    for (var i = 0; i < inputsCantidad.length; i++) {
+        cantidadTotal += parseInt(inputsCantidad[i].value);
+    }
+
+    // Actualizar el contador en el span con clase item-count
+    var contador = document.querySelector('.item-count');
+    contador.innerText = cantidadTotal + (cantidadTotal === 1 ? " item" : " items");
+}
