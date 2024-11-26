@@ -4,8 +4,8 @@ var carritoVisible = false;
 // Lista de productos
 var productos = [
     { titulo: "Milhojas 1", img: "../img/pan1.png", precio: "S/ 15.00" },
-    { titulo: "Croissant", img: "img/pan2.png", precio: "S/ 25.00" },
-    { titulo: "Milhojas 2", img: "img/pan3.png", precio: "S/ 35.00" },
+    { titulo: "Croissant", img: "/img/pan2.png", precio: "S/ 25.00" },
+    { titulo: "Milhojas 2", img: "/pan3.png", precio: "S/ 35.00" },
     { titulo: "Alfajor", img: "img/pan4.png", precio: "S/ 18.00" },
     { titulo: "Carrot Cake", img: "img/pan5.png", precio: "S/ 32.00" },
     { titulo: "Pie 1", img: "img/pan6.png", precio: "S/ 18.00" },
