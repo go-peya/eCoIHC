@@ -4,25 +4,46 @@
     padding:0;
     font-family: 'Open Sans';
 }
-header{
-    background: url(img/header.jpg);
-    background-size: cover;
-    background-position:center;
-    height: 300px;
-    position: relative; /* Asegúrate de que el header tenga posición relativa */
+
+:root {
+    --textButtonCart: #fff;
+    --button-color: #F4952C;
+    --panelCarrito-color: #000;
+    --textHeader-color: #fff;
+    --contentButtonCart: #000;
+    --body: #fff;
+    --contentCart: #fff;
+    --tran-03: all 0.3s ease;
+    --headerColor: #000;
+    --darkButton: #292929;
+    
 }
-header h1{
-    text-align: center;
-    font-size: 35px;
-    /* background-color: #000; */
-    color: #fff;
-    padding: 30px 0;
+
+body.dark {
+    --textButtonCart: #000;
+    --button-color: #242526;
+    --contentButtonCart: #fff;
+    --body: #000;
+    --contentCart: #efefef;
+    --textHeader-color: #000;
+    --headerColor: #525252;
+    --primary-color-dark: #000;  
+    
+    
 }
+
+.body{
+    background-color: var(--body);
+    color: var(--primary-color-dark);
+    
+}  
+
 .contenedor{
     max-width: 900px;
     padding: 10px;
     margin: auto;
     display: flex;
+    
     justify-content: space-between;
     /* oculto lo que queda fuera del .contenedor */
     contain: paint;
@@ -37,6 +58,9 @@ header h1{
     /* width: 60%; */
     width: 100%;
     transition: .3s;
+}
+.item{
+    background-color: var(--contentCart);
 }
 .contenedor .contenedor-items .item{
     max-width: 200px;
@@ -70,8 +94,8 @@ header h1{
     display: block;
     margin: 10px auto;
     border: none;
-    background-color: black;
-    color: #fff;
+    background-color: var(--contentButtonCart);
+    color: var(--textButtonCart);
     padding: 5px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -104,7 +128,7 @@ header h1{
 }
 
 .carrito .header-carrito{
-    background-color: #000;
+    background-color: var(--panelCarrito-color);
     color: #fff;
     text-align: center;
     padding: 30px 0;
@@ -201,7 +225,7 @@ header h1{
     display: block;
     width: 100%;
     border: none;
-    background: #F4952C;
+    background: var(--button-color);
     color: #fff;
     border-radius: 5px;
     font-size: 18px;
@@ -227,7 +251,7 @@ header h1{
 
 /* Botón del carrito */
 .cart-btn {
-  background-color: #F4952C; /* Color verde del botón */
+  background-color: var(--button-color); /* Color verde del botón */
   color: white; /* Color del texto */
   padding: 12px 20px; /* Espaciado interno */
   border-radius: 8px; /* Bordes redondeados */
@@ -242,7 +266,7 @@ header h1{
 
 /* Efecto hover para el botón */
 .cart-btn:hover {
-  background-color: #292929; /* Color más oscuro al pasar el mouse */
+  background-color: var(--darkButton); /* Color más oscuro al pasar el mouse */
 }
 
 /* Estilo del ícono del carrito */
@@ -317,3 +341,6 @@ header h1{
     font-size: 24px;
     cursor: pointer;
   }
+
+
+  
