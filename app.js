@@ -3,15 +3,15 @@ var carritoVisible = false;
 
 // Lista de productos
 var productos = [
-    { titulo: "Milhojas 1", img: "img/pan1.png", precio: "S/ 15.00" },
-    { titulo: "Croissant", img: "img/pan2.png", precio: "S/ 25.00" },
-    { titulo: "Milhojas 2", img: "img/pan3.png", precio: "S/ 35.00" },
-    { titulo: "Alfajor", img: "img/pan4.png", precio: "S/ 18.00" },
-    { titulo: "Carrot Cake", img: "img/pan5.png", precio: "S/ 32.00" },
-    { titulo: "Pie 1", img: "img/pan6.png", precio: "S/ 18.00" },
-    { titulo: "Pie 2", img: "img/pan7.png", precio: "S/ 54.00" },
-    { titulo: "Pie 3", img: "img/pan8.png", precio: "S/ 32.00" },
-    { titulo: "Empanada", img: "img/pan9.png", precio: "S/ 42.80" }
+    { titulo: "Milhojas 1", img: "img/pan1.png", precio: "S/ 15.00", descripción: "poner texto según producto" },
+    { titulo: "Croissant", img: "img/pan2.png", precio: "S/ 25.00", descripción: "poner texto según producto" },
+    { titulo: "Milhojas 2", img: "img/pan3.png", precio: "S/ 35.00", descripción: "poner texto según producto" },
+    { titulo: "Alfajor", img: "img/pan4.png", precio: "S/ 18.00", descripción: "poner texto según producto" },
+    { titulo: "Carrot Cake", img: "img/pan5.png", precio: "S/ 32.00", descripción: "poner texto según producto" },
+    { titulo: "Pie 1", img: "img/pan6.png", precio: "S/ 18.00", descripción: "poner texto según producto" },
+    { titulo: "Pie 2", img: "img/pan7.png", precio: "S/ 54.00", descripción: "poner texto según producto" },
+    { titulo: "Pie 3", img: "img/pan8.png", precio: "S/ 32.00", descripción: "poner texto según producto" },
+    { titulo: "Empanada", img: "img/pan9.png", precio: "S/ 42.80", descripción: "poner texto según producto" }
 ];
 
 //Espermos que todos los elementos de la pàgina cargen para ejecutar el script
@@ -23,7 +23,6 @@ if(document.readyState == 'loading'){
 
 function ready(){
     renderProductos();
-
     //Agregremos funcionalidad a los botones eliminar del carrito
     var botonesEliminarItem = document.getElementsByClassName('btn-eliminar');
     for(var i=0;i<botonesEliminarItem.length; i++){
@@ -69,20 +68,67 @@ function cerrarCarrito() {
 }
 
 
+
 function renderProductos() {
     var contenedorItems = document.getElementsByClassName('contenedor-items')[0];
-    productos.forEach(producto => {
+    productos.forEach((producto, index) => {
         var itemHTML = `
             <div class="item">
                 <span class="titulo-item">${producto.titulo}</span>
-                <img src="${producto.img}" alt="" class="img-item">
+                <img src="${producto.img}" alt="" class="img-item" data-index="${index}">
                 <span class="precio-item">${producto.precio}</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
         `;
         contenedorItems.innerHTML += itemHTML;
     });
+
+    // Añadir eventos de clic a las imágenes
+    document.querySelectorAll('.img-item').forEach(img => {
+        img.addEventListener('click', mostrarPopupProducto);
+    });
 }
+
+function mostrarPopupProducto(event) {
+    var index = event.target.getAttribute('data-index');
+    var producto = productos[index];
+
+    document.getElementById('popup-img').src = producto.img;
+    document.getElementById('popup-title').innerText = producto.titulo;
+    document.getElementById('popup-description').innerText = producto.descripción;
+    document.getElementById('add-to-cart-popup').setAttribute('data-index', index);
+
+    var popup = document.getElementById('product-popup');
+    popup.classList.remove('hidden');
+    popup.style.display = 'flex';
+}
+
+document.getElementById('font-size-slider').addEventListener('input', function () {
+    var newSize = this.value + 'px';
+    document.getElementById('popup-description').style.fontSize = newSize;
+});
+
+document.getElementById('font-decrease').addEventListener('click', function () {
+    var slider = document.getElementById('font-size-slider');
+    slider.value = Math.max(parseInt(slider.value) - 1, slider.min);
+    slider.dispatchEvent(new Event('input'));
+});
+
+document.getElementById('font-increase').addEventListener('click', function () {
+    var slider = document.getElementById('font-size-slider');
+    slider.value = Math.min(parseInt(slider.value) + 1, slider.max);
+    slider.dispatchEvent(new Event('input'));
+});
+
+document.getElementById('close-popup').addEventListener('click', cerrarPopup);
+
+function cerrarPopup() {
+    var popup = document.getElementById('product-popup');
+    popup.classList.add('hidden');
+    popup.style.display = 'none';
+}
+
+
 
 //Eliminamos todos los elementos del carrito y lo ocultamos
 function pagarClicked(){
@@ -106,7 +152,6 @@ function agregarAlCarritoClicked(event){
     console.log(imagenSrc);
 
     agregarItemAlCarrito(titulo, precio, imagenSrc);
-
     //hacerVisibleCarrito();
 }
 
@@ -118,7 +163,6 @@ function hacerVisibleCarrito() {
         carritoVisible = true;
     }
 }
-
 
 //Funciòn que agrega un item al carrito
 function agregarItemAlCarrito(titulo, precio, imagenSrc){
@@ -203,7 +247,6 @@ function eliminarItemCarrito(event){
     //Actualizamos el total del carrito
     actualizarTotalCarrito();
     actualizarContadorCarrito();
-
     //la siguiente funciòn controla si hay elementos en el carrito
     //Si no hay elimino el carrito
     ocultarCarrito();
