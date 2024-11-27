@@ -53,8 +53,37 @@
 
     <section class="contenedor">
         <!-- Contenedor de elementos -->
-        <div class="contenedor-items"></div>
+        <div class="contenedor-items"></div>        
     </section>
+
+    <!-- Pop up - Ventana flotante -->
+    <div id="product-popup" class="popup hidden">
+    <div class="popup-content">
+        <button id="close-popup" class="close-popup"><i class='bx bx-x'></i></button>
+        <div class="popup-left">
+        <img id="popup-img" src="" alt="Imagen del producto">
+        </div>
+        <div class="popup-right">
+        <h2 id="popup-title"></h2>
+        <div class="font-slider"> Tamano de texto:
+            <button id="font-decrease" class="font-button">
+            <i class='bx bx-minus' ></i>
+            </button>
+            <input id="font-size-slider" type="range" min="12" max="24" value="16">
+            <button id="font-increase" class="font-button">
+            <i class='bx bx-plus' ></i>
+            </button>
+        </div>
+        <p id="popup-description"></p>
+        <div class="button-container">
+            <button id="add-to-cart-popup" class="boton-item">Agregar al Carrito</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
  
     <div id="footer-pan"></div>
     
