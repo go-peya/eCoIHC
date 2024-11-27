@@ -243,7 +243,7 @@ function actualizarTotalCarrito(){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const cartBtn = document.getElementById('cart-btn');
+    //const cartBtn = document.getElementById('cart-btn');
     const carrito = document.getElementById('carrito');
 
     cartBtn.addEventListener('click', () => {
