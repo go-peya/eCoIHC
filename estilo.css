@@ -73,6 +73,9 @@ body.dark {
 .contenedor .contenedor-items .item .img-item{
     width: 100%;
 }
+.img-item{
+    cursor: pointer;
+}
 .contenedor .contenedor-items .item:hover{
     box-shadow: 0 0 10px #666;
     scale: 1.05;
