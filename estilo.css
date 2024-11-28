@@ -478,7 +478,7 @@ body.dark {
 .contenedores {
     width: 90%; /* Reduce el ancho total del contenedor para dejar márgenes */
     margin: 0 auto; /* Centra el contenedor en la página */
-    padding: 30px 0px 10px 0px;
+    padding: 20px 0px 0px 0px;
 }
 
 .contenedores4 {
