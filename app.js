@@ -8,10 +8,10 @@ var productos = [
     { titulo: "Milhojas 2", img: "img/pan3.png", precio: "S/ 35.00", descripción: "poner texto según producto" },
     { titulo: "Alfajor", img: "img/pan4.png", precio: "S/ 18.00", descripción: "poner texto según producto" },
     { titulo: "Carrot Cake", img: "img/pan5.png", precio: "S/ 32.00", descripción: "poner texto según producto" },
-    { titulo: "Pie 1", img: "img/pan6.png", precio: "S/ 18.00", descripción: "poner texto según producto" },
-    { titulo: "Pie 2", img: "img/pan7.png", precio: "S/ 54.00", descripción: "poner texto según producto" },
-    { titulo: "Pie 3", img: "img/pan8.png", precio: "S/ 32.00", descripción: "poner texto según producto" },
-    { titulo: "Empanada", img: "img/pan9.png", precio: "S/ 42.80", descripción: "poner texto según producto" }
+    { titulo: "Pie 1", img: "img/pan6.png", precio: "S/ 18.00", descripción: "poner texto según producto" },   
+    { titulo: "Empanada", img: "img/pan9.png", precio: "S/ 42.80", descripción: "poner texto según producto" },
+    { titulo: "Pie 2", img: "img/pan7.png", precio: "S/ 54.00", descripción: "poner texto según producto" }/*,     
+    { titulo: "Pie 3", img: "img/pan8.png", precio: "S/ 32.00", descripción: "poner texto según producto" }*/
 ];
 
 //Espermos que todos los elementos de la pàgina cargen para ejecutar el script

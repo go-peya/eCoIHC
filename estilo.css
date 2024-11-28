@@ -39,7 +39,7 @@ body.dark {
 }  
 
 .contenedor{
-    max-width: 900px;
+    max-width: 1200px;
     padding: 10px;
     margin: auto;
     display: flex;
@@ -474,15 +474,6 @@ body.dark {
   text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
 /* Contenido de relleno */
 .contenedores {
     width: 90%; /* Reduce el ancho total del contenedor para dejar márgenes */
@@ -650,8 +641,3 @@ body.dark {
     margin-bottom: 20px;
     
 }
-
-
-
-
-
