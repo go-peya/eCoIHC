@@ -38,6 +38,12 @@ body.dark {
     
 }  
 
+.header-logo-img {
+    width: 90px; /* Ajusta el tamaño del logo según necesites */
+    /* height: auto; */
+}
+
+
 .contenedor{
     max-width: 1200px;
     padding: 10px;
